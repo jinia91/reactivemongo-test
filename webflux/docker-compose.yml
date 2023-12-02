@@ -1,0 +1,16 @@
+version: "3"
+services:
+  s02_webflux:
+    container_name: stage1_s02_webflux
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "10202:10202"
+      - "9022:9022"
+    environment:
+      JAVA_TOOL_OPTIONS: -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=9022 -Dcom.sun.management.jmxremote.rmi.port=9022 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=${HOST_IP:-$DEFAULT_IP} -Xms1G -Xmx2G
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "3"
