@@ -1,14 +1,9 @@
-package kr.co.lendit.mvc.application.service
+package kr.co.lendit.mvc
 
-import kr.co.lendit.mvc.application.port.`in`.CategoryInfo
-import kr.co.lendit.mvc.application.port.`in`.CategoryQuery
-import kr.co.lendit.mvc.application.port.out.CategoryRepo
-import kr.co.lendit.mvc.common.UseCase
-import kr.co.lendit.mvc.domain.CategoryId
-import org.springframework.transaction.annotation.Transactional
+import org.springframework.stereotype.Component
 import kotlin.random.Random
 
-@UseCase
+@Component
 class CategoryService(
     private val categoryRepo: CategoryRepo
 ) : CategoryQuery {

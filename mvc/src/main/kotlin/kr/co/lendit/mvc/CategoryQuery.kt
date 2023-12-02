@@ -1,8 +1,4 @@
-package kr.co.lendit.mvc.application.port.`in`
-
-import kr.co.lendit.mvc.domain.Category
-import kr.co.lendit.mvc.domain.CategoryId
-import kr.co.lendit.mvc.domain.CategoryName
+package kr.co.lendit.mvc
 
 interface CategoryQuery {
     fun getCategories(): List<CategoryInfo>

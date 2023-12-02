@@ -1,13 +1,9 @@
-package kr.co.lendit.mvc.adpater.`in`
+package kr.co.lendit.mvc
 
-import kr.co.lendit.mvc.application.port.`in`.CategoryInfo
-import kr.co.lendit.mvc.application.port.`in`.CategoryQuery
-import kr.co.lendit.mvc.common.WebAdapter
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@WebAdapter
 @RestController
 @RequestMapping("/api/mvc/market")
 class CategoryController(

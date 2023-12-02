@@ -1,4 +1,4 @@
-package kr.co.lendit.mvc.domain
+package kr.co.lendit.mvc
 
 class Category(
     val id: CategoryId,

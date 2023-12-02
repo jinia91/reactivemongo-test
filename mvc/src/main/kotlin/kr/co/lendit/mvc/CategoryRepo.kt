@@ -1,7 +1,7 @@
-package kr.co.lendit.mvc.application.port.out
+package kr.co.lendit.mvc
 
-import kr.co.lendit.mvc.domain.Category
-import kr.co.lendit.mvc.domain.CategoryId
+import kr.co.lendit.mvc.Category
+import kr.co.lendit.mvc.CategoryId
 
 interface CategoryRepo {
     fun findByIdOrNull(id: CategoryId): Category?
