@@ -3,5 +3,5 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://host.docker.internal:27017/mongo_test?minPoolSize=3000&maxPoolSize=3000&maxIdleTimeMS=60000&waitQueueMultiple=10&waitQueueTimeoutMS=60000
+      uri: mongodb://host.docker.internal:27017/mongo_test?minPoolSize=200&maxPoolSize=200&maxIdleTimeMS=60000&waitQueueMultiple=10&waitQueueTimeoutMS=60000
       uuid-representation: standard

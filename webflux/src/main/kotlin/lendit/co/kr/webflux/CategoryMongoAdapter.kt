@@ -1,13 +1,13 @@
 package lendit.co.kr.webflux
 
-import kotlinx.coroutines.flow.map
+import java.util.*
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
+import org.springframework.data.mongodb.core.query.Criteria
 import org.springframework.data.mongodb.core.query.Query
-import java.util.UUID
-import kotlinx.coroutines.flow.Flow
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+
 
 @Service
 class CategoryMongoAdapter(
@@ -32,7 +32,11 @@ class CategoryMongoAdapter(
     }
 
     override fun findAllByNamesIn(names: MutableList<String>): Flux<Category> {
-        return categoryDocumentRepository.findByNameIn(names).map { it.toDomain() }
+        val query = Query(Criteria.where("name").`in`(names)).cursorBatchSize(0)
+        return reactiveMongoTemplate.find(query, CategoryDocument::class.java)
+            .map { it.toDomain() }
+
+//        return categoryDocumentRepository.findByNameIn(names).map { it.toDomain() }
     }
 
     fun CategoryDocument.toDomain() = Category(
