@@ -1,11 +1,11 @@
 package kr.co.lendit.mvc
 
-import jakarta.persistence.Id
 import org.springframework.data.annotation.PersistenceCreator
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.data.repository.findByIdOrNull
 import java.util.*
+import org.springframework.data.annotation.Id
 import org.springframework.stereotype.Component
 
 @Component

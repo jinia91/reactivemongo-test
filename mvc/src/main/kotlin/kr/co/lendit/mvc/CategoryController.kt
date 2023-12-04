@@ -34,7 +34,7 @@ class CategoryController(
     }
 
     @GetMapping("/mysql/categories/all", "/mongo/categories/all")
-    fun all(): List<CategoryInfo> {
-        return categoryQuery.getAll()
+    fun all(): CategoryInfo {
+        return categoryQuery.getAll().last()
     }
 }

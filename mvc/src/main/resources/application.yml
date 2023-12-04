@@ -1,36 +1,12 @@
-htim:
-  service:
-    member: http://docker.for.mac.localhost:10101
-    market: http://docker.for.mac.localhost:10201
-    menu: http://docker.for.mac.localhost:10301
-    order: http://docker.for.mac.localhost:10401
-    payment: http://docker.for.mac.localhost:10501
-    delivery: http://docker.for.mac.localhost:10601
 
 server:
   port: 10201
+#  tomcat:
+#    threads:
+#      max: 3000
+
 spring:
-  datasource:
-    url: jdbc:mysql://localhost/database?allowPublicKeyRetrieval=true&useSSL=false
-    username: user
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQLDialect
-    defer-datasource-initialization: true
-
-  sql:
-    init:
-      mode: always
-
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      database: mongo_test
+      uri: mongodb://host.docker.internal:27017/mongo_test?minPoolSize=200&maxPoolSize=200&maxIdleTimeMS=60000&waitQueueMultiple=10&waitQueueTimeoutMS=60000
       uuid-representation: standard
-      auto-index-creation: true
